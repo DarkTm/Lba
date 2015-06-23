@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1874238D-3353-4212-B6E5-26F394223633</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Projects</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B82358525294D98A1448E548E58C4B3455B13A88</key>
+		<string>https://github.com/DarkTm/Lba</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Projects.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B82358525294D98A1448E548E58C4B3455B13A88</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/DarkTm/Lba</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B82358525294D98A1448E548E58C4B3455B13A88</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B82358525294D98A1448E548E58C4B3455B13A88</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Lba</string>
+		</dict>
+	</array>
+</dict>
+</plist>
