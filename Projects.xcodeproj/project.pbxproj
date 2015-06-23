@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B7AFCD4420E69C8A72B5058 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF74B3E260E9E40264DC2EB /* libPods.a */; };
+		697768161B3948DB00F6FDB9 /* WYDelayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 697768151B3948DB00F6FDB9 /* WYDelayManager.m */; };
 		F43F50FC1B3857EA00F64CA6 /* TODO.md in Resources */ = {isa = PBXBuildFile; fileRef = F43F50FB1B3857EA00F64CA6 /* TODO.md */; };
 		F4BDB1E41B3840AD0033E65D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB1E31B3840AD0033E65D /* main.m */; };
 		F4BDB1E71B3840AD0033E65D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB1E61B3840AD0033E65D /* AppDelegate.m */; };
@@ -31,9 +32,11 @@
 
 /* Begin PBXFileReference section */
 		369D57773075BC175B031689 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		697768141B3948DB00F6FDB9 /* WYDelayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYDelayManager.h; sourceTree = "<group>"; };
+		697768151B3948DB00F6FDB9 /* WYDelayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYDelayManager.m; sourceTree = "<group>"; };
+		697768171B397BC700F6FDB9 /* AppMacro.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.pch; sourceTree = "<group>"; };
 		9BDB0B1E051F2FAC33DB0DAE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DAF74B3E260E9E40264DC2EB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F43F50F91B384D1500F64CA6 /* AppMacro.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.pch; sourceTree = "<group>"; };
 		F43F50FB1B3857EA00F64CA6 /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		F4BDB1DE1B3840AD0033E65D /* Projects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BDB1E21B3840AD0033E65D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,7 +109,7 @@
 				F4BDB20B1B3841670033E65D /* Timer+GCD+Perfomer */,
 				F4BDB1E51B3840AD0033E65D /* AppDelegate.h */,
 				F4BDB1E61B3840AD0033E65D /* AppDelegate.m */,
-				F43F50F91B384D1500F64CA6 /* AppMacro.pch */,
+				697768171B397BC700F6FDB9 /* AppMacro.pch */,
 				F4BDB1E81B3840AD0033E65D /* ViewController.h */,
 				F4BDB1E91B3840AD0033E65D /* ViewController.m */,
 				F4BDB1EB1B3840AD0033E65D /* Main.storyboard */,
@@ -149,6 +152,8 @@
 			children = (
 				F4BDB20C1B3841670033E65D /* TimerViewController.h */,
 				F4BDB20D1B3841670033E65D /* TimerViewController.m */,
+				697768141B3948DB00F6FDB9 /* WYDelayManager.h */,
+				697768151B3948DB00F6FDB9 /* WYDelayManager.m */,
 			);
 			path = "Timer+GCD+Perfomer";
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 			files = (
 				F4BDB20E1B3841670033E65D /* TimerViewController.m in Sources */,
 				F4BDB1EA1B3840AD0033E65D /* ViewController.m in Sources */,
+				697768161B3948DB00F6FDB9 /* WYDelayManager.m in Sources */,
 				F4BDB1E71B3840AD0033E65D /* AppDelegate.m in Sources */,
 				F4BDB1E41B3840AD0033E65D /* main.m in Sources */,
 			);
@@ -464,9 +470,12 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Projects/AppMacro.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"halo=1",
 				);
 				INFOPLIST_FILE = ProjectsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -483,6 +492,8 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Projects/AppMacro.pch;
 				INFOPLIST_FILE = ProjectsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

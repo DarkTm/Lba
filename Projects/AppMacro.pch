@@ -12,8 +12,14 @@
 
 #define dLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 
+#define iLog() dLog(@"");
 
 #define dLogRect(rect) dLog(@"%@",    NSStringFromCGRect(rect));
+
+#define WS(ws)    __weak __typeof(&*self)ws = self
+
+
+#import "WYDelayManager.h"
 
 #endif
 
