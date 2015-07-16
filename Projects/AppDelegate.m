@@ -19,6 +19,30 @@
     // Override point for customization after application launch.
     
     dLog(@"%@",launchOptions);
+    // Notify 测试
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
+    else {
+        [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge];
+    }
+    
+    if (launchOptions) {
+        int tag = [launchOptions[@"eventId"] intValue];
+        NSArray *notifyArray=[[UIApplication sharedApplication] scheduledLocalNotifications];
+        if ([notifyArray count]) {
+            for (int i = 0; i < notifyArray.count; i++) {
+                UILocalNotification *location = notifyArray[i];
+                NSDictionary *userInfo = location.userInfo;
+                NSNumber *obj = userInfo[@"eventId"];
+                int mytag = [obj intValue];
+                if (mytag == tag) {
+                    [[UIApplication sharedApplication] cancelLocalNotification:location];
+                    break;
+                }
+            }
+        }
+    }
     return YES;
 }
 
@@ -42,6 +66,10 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    
 }
 
 @end

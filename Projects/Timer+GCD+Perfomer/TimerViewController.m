@@ -31,7 +31,7 @@
 //        dLog(@"");
 //    });
     [[WYDelayGCD shareDelayGCD] startWithDelay:4 task:^{
-        iLog();
+        fLog();
     }];
     
     NSLog(@"2");

@@ -19,7 +19,6 @@ typedef void(^WYDelayTask)(void);
 
 - (void)cancel;
 
-
 @optional
 
 - (void)startWithDelay:(NSTimeInterval)delay rpt:(BOOL)bRepeat inteval:(NSTimeInterval)inteval task:(WYDelayTask)task;
