@@ -4,41 +4,55 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-Shimmer.xcscheme</key>
+		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>Pods-pop.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>0</integer>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Shimmer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>pop.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>68072D843106D7AB579CA1DE</key>
+		<key>47C800E42623009B7192B025B3DD25A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A8093282C3A0E04EA731C533</key>
+		<key>5352D432641F0656C90741034E32F31E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F31C1F053ABA1160C1DDC883</key>
+		<key>5C66DF613C7835C7C877A86FD000BDD6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>739001C41267BEC7E09085F97FB8D3E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA3273B190BA78B9FDA0D88F76E97049</key>
 		<dict>
 			<key>primary</key>
 			<true/>

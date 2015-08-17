@@ -11,5 +11,6 @@
 @class LandscapeVideoView;
 @interface LandscapeVideoController : UIViewController
 @property (weak, nonatomic) IBOutlet LandscapeVideoView *player;
+@property (weak, nonatomic) IBOutlet UIImageView *ivGif;
 
 @end

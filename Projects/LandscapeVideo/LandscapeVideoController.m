@@ -8,6 +8,7 @@
 
 #import "LandscapeVideoController.h"
 #import "LandscapeVideoView.h"
+#import <UIImage+GIF.h>
 
 @implementation LandscapeVideoController
 
@@ -23,7 +24,11 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.player play];
+    [self.ivGif removeFromSuperview];
+//    self.ivGif.image = [UIImage sd_animatedGIFNamed:@"test"];
+    
 }
+
 - (IBAction)actionChange:(id)sender {
     [self.player rotation];
 }

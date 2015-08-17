@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
-
+#import <objc/runtime.h>
+#import <objc/message.h>
+@import AdSupport;
 @interface AppDelegate ()
+@property (nonatomic, copy) NSString *temp;
+
 
 @end
 
@@ -18,7 +22,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    dLog(@"%@",launchOptions);
+//    dLog(@"%@",launchOptions);
     // Notify 测试
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
@@ -43,6 +47,81 @@
             }
         }
     }
+
+    //9536EA9C-7309-41C9-8838-3AC659C07993
+    //F1E7A30D-4BAE-494D-919A-613504DD8EE8
+    //845F1639-2D31-4A8C-99B7-3EF344DD793F
+    //94415B81-AB08-45FA-B9AE-5B2353F080A6
+    //6B5FABAA-847F-4ADA-8FDD-37BA37D060E4
+    //30067A99-AC80-45DC-83F6-323D6B3D2DD3
+    
+    dLog(@"%@",[[[ASIdentifierManager alloc] advertisingIdentifier] UUIDString]);
+//    Class asi = NSClassFromString(@"ASIdentifierManager");
+//    Class a = objc_getClass("NSString");
+//    Class asi = objc_getClass("ASIdentifierManager");
+//    id instace = [[asi alloc] init];
+//    id value = [instace performSelector:@selector(advertisingIdentifier) withObject:nil];
+//    dLog(@"%@",value);
+
+//    NSString *s = @"temp string";
+//    self.temp = s;
+//    NSMutableString *mS = [s mutableCopy];
+//    NSString *sT = mS;
+////    NSString *copys = [s copy];
+//    dLog(@"%@,%@",s,self.temp);
+//    dLog(@"%p,%p",s,self.temp);
+//    dLog(@"%p,%p",&s,&_temp);
+//    
+//    
+//    NSMutableString *mString = [NSMutableString stringWithString:@"mutable string"];
+//    NSMutableString *mString2 = [mString mutableCopy];
+//    NSString *string = [mString2 copy];
+//    
+//    NSMutableArray *mArray = [@[@"1",@"2",@"3"] mutableCopy];
+//    NSMutableArray *mArrayCopy = [mArray mutableCopy];
+//    NSMutableArray *mArrayStrong = mArrayCopy;
+//    mArrayCopy[0]=@"6";
+//    NSArray *arrayCopy = [mArray copy];
+    
+    /*
+    // 分解umeng数据
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"umeng" ofType:@"txt"];
+    NSData * d = [NSData dataWithContentsOfFile:path];
+    NSString * s = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
+    NSArray *a = [s componentsSeparatedByString:@"\r\n"];
+    
+    
+    NSString *du = @",";
+    NSMutableString *rslt = [NSMutableString string];
+    
+    for (NSString *src in a) {
+        if (src.length < 2) {
+            continue;
+        }
+        
+        NSRange range = [src rangeOfString:du];
+        if (range.location != NSNotFound) {
+            NSString *t1 = [src substringToIndex:range.location];
+            t1 = [t1 capitalizedString];
+            t1 = [NSString stringWithFormat:@"k%@",t1];
+            
+            NSString *t2 = [src substringToIndex:range.location];
+            t2 = [NSString stringWithFormat:@"@\"%@\"",t2];
+            
+            
+            NSString *t3 = [src substringWithRange:NSMakeRange(range.location + 1, src.length - range.location - 1)];
+            [rslt appendString:@"#define "];
+            [rslt appendString:t1];
+            [rslt appendString:@"   "];
+            [rslt appendString:t2];
+            [rslt appendString:@"   "];
+            [rslt appendString:t3];
+            [rslt appendFormat:@"\r\n"];
+        }
+    }
+    dLog(@"%@",rslt);
+    */
+        
     return YES;
 }
 
