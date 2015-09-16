@@ -15,7 +15,9 @@
 #import "UIImage+Category.h"
 #import "UINavigationController+Animation.h"
 #import "UIScrollView+Touches.h"
-#import "UIView+Corner.h"
+#import "UIView+Category.h"
 #import "UIViewController+Category.h"
 #import "UIActionSheet+Block.h"
+#import "UIBezierPath+TextPath.h"
+#import "UILabel+Path.h"
 #endif

@@ -10,9 +10,7 @@
 
 @implementation NSDate (Category)
 
-- (NSString*) formatterWithString:(NSString*)dateFormat {
-    
-    
+- (NSString *) stringFromDateWithFormat:(NSString *)format {
     static NSDateFormatter *formatter = nil;
     
     static dispatch_once_t onceToken;
@@ -22,7 +20,7 @@
         }
     });
     
-    [formatter setDateFormat:dateFormat];
+    [formatter setDateFormat:format];
     NSString *ret = [formatter stringFromDate:self];
     return ret;
 }

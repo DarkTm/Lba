@@ -20,6 +20,8 @@
 
 
 #import "WYDelayManager.h"
+#import "UIButton+TouchUpInside.h"
+#import "UIView+EventID.h"
 
 #endif
 
