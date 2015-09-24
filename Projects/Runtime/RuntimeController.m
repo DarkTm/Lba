@@ -79,13 +79,24 @@ __weak NSString *string_weak_ = nil;
     dLog(@"%@",string_weak_);
 }
 - (IBAction)actionBtn1:(id)sender {
+    UIButton *btn = sender;
+    btn.eventID = @"btn1";
+    fLog();
 }
 
 - (IBAction)actionBtn2:(id)sender {
+    UIButton *btn = sender;
+    btn.eventID = @"btn2";
+
+    fLog();
 }
 
 
 - (IBAction)actionBtn3:(id)sender {
+    UIButton *btn = sender;
+    btn.eventID = @"btn3";
+
+    fLog();
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

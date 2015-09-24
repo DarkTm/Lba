@@ -15,6 +15,7 @@
 }
 
 - (void)setEventID:(NSString *)eventID {
+    // nil 过滤
     objc_setAssociatedObject(self, @selector(eventID), eventID, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 

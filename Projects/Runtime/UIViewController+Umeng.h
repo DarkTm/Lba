@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (SelectRow)
-
+@interface UIViewController (Umeng)
+@property (nonatomic, strong) NSString *eventID;
 @end

@@ -10,11 +10,12 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import "Son.h"
+#import "Watchdog.h"
 @import AdSupport;
 @interface AppDelegate ()
 @property (nonatomic, copy) NSString *temp;
 @property (nonatomic, strong) NSMutableArray *mutableArray;
-
+@property (nonatomic, strong) Watchdog *dog;
 @end
 
 @implementation AppDelegate
@@ -86,59 +87,59 @@
     
 
     // 分解umeng数据
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"umeng" ofType:@"txt"];
-//    NSData * d = [NSData dataWithContentsOfFile:path];
-//    NSString * s = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
-//    NSArray *a = [s componentsSeparatedByString:@"\r\n"];
-//    
-//    
-//    NSString *du = @",";
-//    NSMutableString *rslt = [NSMutableString string];
-//    
-//    for (NSString *srcs in a) {
-//        NSString *src = [srcs copy];
-//        // 清除 末尾 ','
-//        if ([src hasSuffix:@","]) {
-//            src = [src substringToIndex:src.length - 1];
-//        }
-//
-//        // 清除 末尾 ',0'
-//        if ([src hasSuffix:@",0"]) {
-//            src = [src substringToIndex:src.length - 2];
-//        }
-//        
-//        // 清除 末尾 ',1'
-//        if ([src hasSuffix:@",1"]) {
-//            src = [src substringToIndex:src.length - 2];
-//        }
-//        
-//        if (src.length < 2) {
-//            continue;
-//        }
-//        
-//        src = [src stringByReplacingOccurrencesOfString:@"," withString:@",//"];
-//        
-//        NSRange range = [src rangeOfString:du];
-//        if (range.location != NSNotFound) {
-//            NSString *t1 = [src substringToIndex:range.location];
-//            t1 = [t1 capitalizedString];
-//            t1 = [NSString stringWithFormat:@"k%@",t1];
-//            
-//            NSString *t2 = [src substringToIndex:range.location];
-//            t2 = [NSString stringWithFormat:@"@\"%@\"",t2];
-//            
-//            
-//            NSString *t3 = [src substringWithRange:NSMakeRange(range.location + 1, src.length - range.location - 1)];
-//            [rslt appendString:@"#define "];
-//            [rslt appendString:t1];
-//            [rslt appendString:@"   "];
-//            [rslt appendString:t2];
-//            [rslt appendString:@"   "];
-//            [rslt appendString:t3];
-//            [rslt appendFormat:@"\n"];
-//        }
-//    }
-//    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"umeng" ofType:@"txt"];
+    NSData * d = [NSData dataWithContentsOfFile:path];
+    NSString * s = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
+    NSArray *a = [s componentsSeparatedByString:@"\r\n"];
+    
+    
+    NSString *du = @",";
+    NSMutableString *rslt = [NSMutableString string];
+    
+    for (NSString *srcs in a) {
+        NSString *src = [srcs copy];
+        // 清除 末尾 ','
+        if ([src hasSuffix:@","]) {
+            src = [src substringToIndex:src.length - 1];
+        }
+
+        // 清除 末尾 ',0'
+        if ([src hasSuffix:@",0"]) {
+            src = [src substringToIndex:src.length - 2];
+        }
+        
+        // 清除 末尾 ',1'
+        if ([src hasSuffix:@",1"]) {
+            src = [src substringToIndex:src.length - 2];
+        }
+        
+        if (src.length < 2) {
+            continue;
+        }
+        
+        src = [src stringByReplacingOccurrencesOfString:@"," withString:@",//"];
+        
+        NSRange range = [src rangeOfString:du];
+        if (range.location != NSNotFound) {
+            NSString *t1 = [src substringToIndex:range.location];
+            t1 = [t1 capitalizedString];
+            t1 = [NSString stringWithFormat:@"k%@",t1];
+            
+            NSString *t2 = [src substringToIndex:range.location];
+            t2 = [NSString stringWithFormat:@"@\"%@\"",t2];
+            
+            
+            NSString *t3 = [src substringWithRange:NSMakeRange(range.location + 1, src.length - range.location - 1)];
+            [rslt appendString:@"#define "];
+            [rslt appendString:t1];
+            [rslt appendString:@"   "];
+            [rslt appendString:t2];
+            [rslt appendString:@"   "];
+            [rslt appendString:t3];
+            [rslt appendFormat:@"\n"];
+        }
+    }
+    
 //    NSString *old = [[[UIWebView alloc] init] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
 //    NSString *newAgent =  [old stringByAppendingString:@"  MangoPlus"];
 //    
@@ -146,7 +147,17 @@
 //    [[NSUserDefaults standardUserDefaults] registerDefaults:dictionnary];
 //    [Son new];
 //    NSLog(@"%lu",sizeof(8));
-//    dLog(@"%@",rslt);
+//    dLog(@"%f",FLT_MIN);
+    
+    
+    Watchdog *dog = [[Watchdog alloc] initWithThreshold:0.2 handler:^{
+        
+    }];
+    self.dog = dog;
+    
+    
+    
+    
     return NO;
 }
 

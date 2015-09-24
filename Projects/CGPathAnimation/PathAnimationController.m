@@ -13,7 +13,7 @@
 @implementation PathAnimationController
 
 - (void)viewDidLoad {
-    
+
     [super viewDidLoad];
     self.containerView.backgroundColor = [UIColor darkGrayColor];
     PathAnimationView *p  = [PathAnimationView new];
@@ -25,7 +25,20 @@
     [self.containerView addSubview:p];
     [p startAllAnimations:nil];
     
-    
+    if ([p isDescendantOfView:self.containerView]) {
+        fLog();
+    }
+    else {
+        fLog()
+    }
+
+    if ([p isDescendantOfView:self.view]) {
+        fLog();
+    }
+    else {
+        fLog()
+    }
+
 }
 
 @end

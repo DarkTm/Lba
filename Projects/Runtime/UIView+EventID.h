@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView (EventID)
+// 添加umeng eventID
 @property (nonatomic, copy) NSString *eventID;
+
 @end

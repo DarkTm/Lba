@@ -10,4 +10,6 @@
 
 @interface UIButton (TouchUpInside)
 
+@property (nonatomic, strong) NSObject *eventTarge;
+
 @end

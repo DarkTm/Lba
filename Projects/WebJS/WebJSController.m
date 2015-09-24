@@ -41,6 +41,17 @@ UIWebViewDelegate
     context.exceptionHandler = ^(JSContext *context, JSValue *exception) {
         dLog(@"%@",exception);
     };
+    
+    [self performSelectorOnMainThread:@selector(sl) withObject:nil waitUntilDone:NO];
+}
+
+- (void)sl {
+    sleep(2);
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+//    sleep(1);
 }
 
 //- (BOOL)webView:(nonnull UIWebView *)webView shouldStartLoadWithRequest:(nonnull NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {

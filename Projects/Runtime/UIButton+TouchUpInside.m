@@ -9,38 +9,24 @@
 #import "UIButton+TouchUpInside.h"
 #import <objc/runtime.h>
 #import "UIView+EventID.h"
+#import "UIButtonTarget.h"
+
 
 @implementation UIButton (TouchUpInside)
 
-+ (void)load {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        
-    });
-}
-
-/*
- 1、点击事件
- 2、点击按钮后，成功或失败事件
- */
-- (void)sendAction:(SEL)action to:( id)target forEvent:(UIEvent *)event
-{
-    UIControlState state = self.state;
-    UIControlEvents events = self.allControlEvents;
-    if (state == UIControlStateHighlighted && (events & UIControlEventTouchUpInside)) {
-        if (self.eventID.length) {
-            // 做事件处理
-            
-        }
-        else {
-            
-        }
+- (void)setEventID:(NSString *)eventID {
+    [super setEventID:eventID];
+    if ([self isKindOfClass:[UIButton class]]) {
+        self.eventTarge = [UIButtonTarget buttonEventID:self];
     }
 }
 
-
-- (void)sendActionsForControlEvents:(UIControlEvents)controlEvents
-{
-    fLog();
+- (void)setEventTarge:(NSObject *)eventTarge {
+    objc_setAssociatedObject(self, @selector(eventTarge), eventTarge, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
+
+- (NSObject *)eventTarge {
+    return objc_getAssociatedObject(self, @selector(eventTarge));
+}
+
 @end

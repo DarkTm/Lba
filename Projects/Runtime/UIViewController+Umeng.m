@@ -6,11 +6,11 @@
 //  Copyright © 2015年 ikefou.com. All rights reserved.
 //
 
-#import "UIViewController+SelectRow.h"
+#import "UIViewController+Umeng.h"
 #import <objc/runtime.h>
 #import "BaseController.h"
 #import <UIKit/UITableView.h>
-@implementation UIViewController (SelectRow)
+@implementation UIViewController (Umeng)
 
 /*
 static void MySetFrame(id self, SEL _cmd, CGRect frame);
@@ -43,66 +43,79 @@ BOOL class_swizzleMethodAndStore(Class class, SEL original, IMP replacement, IMP
 }
 */
 
+
+- (NSString *)eventID {
+    return (NSString *)(objc_getAssociatedObject(self, @selector(eventID)));
+}
+
+- (void)setEventID:(NSString *)eventID {
+    objc_setAssociatedObject(self, @selector(eventID), eventID, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
+//        该段代码是用来hook didSelectRowAtIndexPath 方法的  不要删。。。
+//        还需要做子类是否响应改delegate！！！！！！！
         Protocol *pt = objc_getProtocol("UITableViewDelegate");
         SEL sel = NSSelectorFromString(@"tableView:didSelectRowAtIndexPath:");
         SEL newSel = NSSelectorFromString(@"replace_tableView:didSelectRowAtIndexPath:");
+        
         int numClasses = objc_getClassList(NULL, 0);
         Class* list = (Class*)malloc(sizeof(Class) * numClasses);
         objc_getClassList(list, numClasses);
         for (int i = 0; i < numClasses; i++) {
-            // 保证 响应该协议、响应该方法、是user类（保证系统类方法不被hook）
-            if (class_conformsToProtocol(list[i], pt) &&
-                class_getInstanceMethod(list[i], sel) &&
-                [list[i] isSubclassOfClass:[BaseController class]]) {
-                [list[i] swizzleSelector:sel withSel:newSel];
+            Class cls = list[i];
+            if (!class_getSuperclass(cls)) {
+                continue;
+            }
+            // 保证 响应该协议、响应该方法、是user类（子类）（保证系统类方法不被hook）
+            if ([cls isSubclassOfClass:[BaseController class]]) {
+                while (cls && ![NSStringFromClass(cls) isEqualToString:NSStringFromClass([BaseController class])]) {
+                    if (class_conformsToProtocol(list[i], pt) &&
+                        class_getInstanceMethod(list[i], sel) ) {
+                        [list[i] swizzleSelector:sel withSel:newSel];
+                        break;
+                    }
+                    cls = class_getSuperclass(cls);
+                }
             }
         }
-        
-        Class cls = NSClassFromString(@"UIViewController");
-        [cls swizzleSelector:@selector(viewWillAppear:) withSel:@selector(replace_viewWillAppear:)];
-        [cls swizzleSelector:@selector(viewWillDisappear:) withSel:@selector(replace_viewWillDisappear:)];
-        
         free(list);
+        [UIViewController swizzleSelector:@selector(viewWillAppear:) withSel:@selector(replace_viewWillAppear:)];
+        [UIViewController swizzleSelector:@selector(viewWillDisappear:) withSel:@selector(replace_viewWillDisappear:)];
     });
 }
 
 - (void)replace_viewWillDisappear:(BOOL)animate {
-    fLog();
+    if (self.eventID.length) {
+    }
     [self replace_viewWillDisappear:animate];
 }
 
 - (void)replace_viewWillAppear:(BOOL)animate {
-//    fLog();
-    NSLog(@"%@,%@",self.class,NSStringFromSelector(_cmd));
-    // 做一个配置文件。 把class 和  xxxpage 关联
+    if (self.eventID.length) {
+    }
     [self replace_viewWillAppear:animate];
 }
 
 - (void)replace_tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    dLog(@"%@",cell.eventID);
-    
-    [self performSelector:@selector(replace_tableView:didSelectRowAtIndexPath:) withObject:tableView withObject:indexPath];
+    if (cell.eventID.length) {
+        dLog(@"%@",cell.eventID);
+    }
+    [self replace_tableView:tableView didSelectRowAtIndexPath:indexPath];
 }
 
-+ (IMP)swizzleSelector:(SEL)origSelector
++ (void)swizzleSelector:(SEL)origSelector
                withSel:(SEL)newSel {
     Class cls = [self class];
-
-    // orgin 原始imp
+    NSLog(@"%@",cls);
     Method origMethod = class_getInstanceMethod(cls, origSelector);
-    
-    // new  新的imp
-    Method newMethod = class_getInstanceMethod(cls, newSel);
-    
+    Method newMethod = class_getInstanceMethod(cls, newSel);    
     if (newMethod && origMethod) {
         method_exchangeImplementations(origMethod, newMethod);
     }
-    return NULL;
 }
 
 @end
