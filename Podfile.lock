@@ -1,4 +1,12 @@
 PODS:
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
+  - Mantle (2.0.4):
+    - Mantle/extobjc (= 2.0.4)
+  - Mantle/extobjc (2.0.4)
   - MBProgressHUD (0.9.1)
   - pop (1.0.7)
   - SDWebImage (3.7.3):
@@ -7,12 +15,16 @@ PODS:
   - Shimmer (1.0.2)
 
 DEPENDENCIES:
+  - FMDB
+  - Mantle
   - MBProgressHUD
   - pop
   - SDWebImage
   - Shimmer
 
 SPEC CHECKSUMS:
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  Mantle: 6bee68168423948be0c0c5924832bf3af188e099
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84

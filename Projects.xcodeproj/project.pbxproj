@@ -37,6 +37,7 @@
 		69B4CDEF1B57BC68005737F3 /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 69B4CDEE1B57BC68005737F3 /* test.mp4 */; };
 		69DD0B9B1B7842EC0009A2B8 /* umeng.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69DD0B9A1B7842EC0009A2B8 /* umeng.txt */; };
 		F43F50FC1B3857EA00F64CA6 /* TODO.md in Resources */ = {isa = PBXBuildFile; fileRef = F43F50FB1B3857EA00F64CA6 /* TODO.md */; };
+		F47741BC1B9AC8E50035EF46 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F47741BB1B9AC8E50035EF46 /* libsqlite3.dylib */; };
 		F4BDB1E41B3840AD0033E65D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB1E31B3840AD0033E65D /* main.m */; };
 		F4BDB1E71B3840AD0033E65D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB1E61B3840AD0033E65D /* AppDelegate.m */; };
 		F4BDB1EA1B3840AD0033E65D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB1E91B3840AD0033E65D /* ViewController.m */; };
@@ -119,6 +120,7 @@
 		9BDB0B1E051F2FAC33DB0DAE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DAF74B3E260E9E40264DC2EB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43F50FB1B3857EA00F64CA6 /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
+		F47741BB1B9AC8E50035EF46 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F4BDB1DE1B3840AD0033E65D /* Projects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BDB1E21B3840AD0033E65D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4BDB1E31B3840AD0033E65D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47741BC1B9AC8E50035EF46 /* libsqlite3.dylib in Frameworks */,
 				691D9EEE1B81C8AE00559F04 /* libsqlite3.0.tbd in Frameworks */,
 				4B7AFCD4420E69C8A72B5058 /* libPods.a in Frameworks */,
 			);
@@ -360,6 +363,7 @@
 		FAF45AC0DE5F6DAE108261A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F47741BB1B9AC8E50035EF46 /* libsqlite3.dylib */,
 				691D9EED1B81C8AE00559F04 /* libsqlite3.0.tbd */,
 				DAF74B3E260E9E40264DC2EB /* libPods.a */,
 			);

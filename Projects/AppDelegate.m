@@ -9,7 +9,60 @@
 #import "AppDelegate.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
+#import <Mantle.h>
+#import <FMDB.h>
 @import AdSupport;
+
+@interface TstModel2 : MTLModel
+<
+MTLJSONSerializing
+>
+
+
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSNumber *age;
+
+@end
+
+@implementation TstModel2
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    
+    return @{@"name":@"name",@"age":@"age"};
+}
+
+
+@end
+
+@interface TstModel : MTLModel
+<
+MTLJSONSerializing
+>
+
+@property (nonatomic, strong) NSNumber *code;
+//@property (nonatomic, strong) id rslt;
+@property (nonatomic, strong) NSString *msg;
+@property (nonatomic, strong) NSString *token;
+@property (nonatomic, strong) NSString *userID;
+@property (nonatomic, strong) TstModel2 *tst2;
+
+
+@end
+
+
+@implementation TstModel
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    
+    return @{@"token":@"rslt.token",@"userID":@"rslt.user_id",@"code":@"code",@"msg":@"msg",@"tst2":@"tst2"};
+}
+
++ (NSValueTransformer *)tst2JSONTransformer {
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:TstModel2.class];
+}
+
+@end
+
 @interface AppDelegate ()
 @property (nonatomic, copy) NSString *temp;
 
@@ -121,7 +174,30 @@
     }
     dLog(@"%@",rslt);
     */
-        
+    
+    
+    
+//    NSDictionary *info = @{@"code":@1,@"rslt":@{@"token":@"78390j87djd7fk0",@"user_id":@"1233123"},@"msg":@"",@"tst2":@{@"age":@22,@"name":@"tangwei"}};
+//    
+//    TstModel *model = [MTLJSONAdapter modelOfClass:[TstModel class] fromJSONDictionary:info error:nil];//[[TstModel alloc] initWithDictionary:info error:nil];
+
+    FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:@"/tmp/tmp.db"];
+    
+    [queue inDatabase:^(FMDatabase *db) {
+        sleep(10);
+        dLog(@"%@",[NSThread currentThread]);
+        dLog(@"%d",[NSThread isMainThread]);
+    }];
+
+    [queue inDatabase:^(FMDatabase *db) {
+        sleep(5);
+        dLog(@"%@",[NSThread currentThread]);
+        dLog(@"%d",[NSThread isMainThread]);
+    }];
+    
+
+    
+    fLog();
     return YES;
 }
 
