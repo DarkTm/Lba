@@ -31,6 +31,20 @@ UITableViewDelegate
 
 __weak NSString *string_weak_ = nil;
 
+- (void)awakeFromNib {
+    
+}
+
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        
+    }
+    return self;
+}
+
 
 - (void)viewDidLoad {
 

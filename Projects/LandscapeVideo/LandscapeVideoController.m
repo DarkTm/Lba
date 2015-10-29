@@ -13,6 +13,20 @@
 @implementation LandscapeVideoController
 
 
+- (void)awakeFromNib {
+    
+}
+
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSURL *path = [[NSBundle mainBundle] URLForResource:@"test" withExtension:@"mp4"];

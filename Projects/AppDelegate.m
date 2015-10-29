@@ -148,14 +148,7 @@
 //    [Son new];
 //    NSLog(@"%lu",sizeof(8));
 //    dLog(@"%f",FLT_MIN);
-    
-    
-    Watchdog *dog = [[Watchdog alloc] initWithThreshold:0.2 handler:^{
-        
-    }];
-    self.dog = dog;
-    
-    
+    dLog(@"%@",rslt);
     
     
     return NO;
