@@ -57,7 +57,7 @@
     //6B5FABAA-847F-4ADA-8FDD-37BA37D060E4
     //30067A99-AC80-45DC-83F6-323D6B3D2DD3
     
-    dLog(@"%@",[[[ASIdentifierManager alloc] advertisingIdentifier] UUIDString]);
+//    dLog(@"%@",[[[ASIdentifierManager alloc] advertisingIdentifier] UUIDString]);
 //    Class asi = NSClassFromString(@"ASIdentifierManager");
 //    Class a = objc_getClass("NSString");
 //    Class asi = objc_getClass("ASIdentifierManager");
@@ -148,7 +148,7 @@
 //    [Son new];
 //    NSLog(@"%lu",sizeof(8));
 //    dLog(@"%f",FLT_MIN);
-    dLog(@"%@",rslt);
+//    dLog(@"%@",rslt);
     
     
     return NO;

@@ -1,21 +1,35 @@
 PODS:
+  - Mantle (2.0.5):
+    - Mantle/extobjc (= 2.0.5)
+  - Mantle/extobjc (2.0.5)
   - MBProgressHUD (0.9.1)
-  - pop (1.0.7)
+  - pop (1.0.8)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
   - Shimmer (1.0.2)
 
 DEPENDENCIES:
+  - Mantle
   - MBProgressHUD
   - pop
+  - ReactiveCocoa (= 2.5)
   - SDWebImage
   - Shimmer
 
 SPEC CHECKSUMS:
+  Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
-  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
+  pop: bb773ae2c791ca2629de13b347e7a8b450fa6a57
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

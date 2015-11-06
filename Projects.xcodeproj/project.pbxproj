@@ -49,6 +49,8 @@
 		696129061BB38A5B000AAB3B /* Watchdog.m in Sources */ = {isa = PBXBuildFile; fileRef = 696129051BB38A5B000AAB3B /* Watchdog.m */; };
 		697768161B3948DB00F6FDB9 /* WYDelayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 697768151B3948DB00F6FDB9 /* WYDelayManager.m */; };
 		698612361BAFDE0A00DFD18E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 698612351BAFDE0A00DFD18E /* libsqlite3.dylib */; };
+		698894071BEC9DF000D5D9B1 /* WYURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 698894061BEC9DF000D5D9B1 /* WYURLProtocol.m */; };
+		6988940A1BEC9E1500D5D9B1 /* NetMonitorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 698894091BEC9E1500D5D9B1 /* NetMonitorViewController.m */; };
 		6989F7491BA7AB17001374C0 /* PathAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6989F7481BA7AB17001374C0 /* PathAnimationController.m */; };
 		6989F7511BA7B73E001374C0 /* PathAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6989F74E1BA7B73E001374C0 /* PathAnimationView.m */; };
 		69A18F871BA2AD7E00C430D8 /* RuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A18F861BA2AD7E00C430D8 /* RuntimeController.m */; };
@@ -162,6 +164,10 @@
 		697768151B3948DB00F6FDB9 /* WYDelayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYDelayManager.m; sourceTree = "<group>"; };
 		697768171B397BC700F6FDB9 /* AppMacro.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.pch; sourceTree = "<group>"; };
 		698612351BAFDE0A00DFD18E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		698894051BEC9DF000D5D9B1 /* WYURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYURLProtocol.h; sourceTree = "<group>"; };
+		698894061BEC9DF000D5D9B1 /* WYURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYURLProtocol.m; sourceTree = "<group>"; };
+		698894081BEC9E1500D5D9B1 /* NetMonitorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetMonitorViewController.h; sourceTree = "<group>"; };
+		698894091BEC9E1500D5D9B1 /* NetMonitorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetMonitorViewController.m; sourceTree = "<group>"; };
 		6989F7471BA7AB17001374C0 /* PathAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PathAnimationController.h; path = CGPathAnimation/PathAnimationController.h; sourceTree = "<group>"; };
 		6989F7481BA7AB17001374C0 /* PathAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PathAnimationController.m; path = CGPathAnimation/PathAnimationController.m; sourceTree = "<group>"; };
 		6989F74D1BA7B73E001374C0 /* PathAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathAnimationView.h; sourceTree = "<group>"; };
@@ -387,6 +393,17 @@
 			name = Runtime;
 			sourceTree = "<group>";
 		};
+		698894041BEC9DA500D5D9B1 /* NetMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				698894081BEC9E1500D5D9B1 /* NetMonitorViewController.h */,
+				698894091BEC9E1500D5D9B1 /* NetMonitorViewController.m */,
+				698894051BEC9DF000D5D9B1 /* WYURLProtocol.h */,
+				698894061BEC9DF000D5D9B1 /* WYURLProtocol.m */,
+			);
+			path = NetMonitor;
+			sourceTree = "<group>";
+		};
 		6989F7461BA7AAF8001374C0 /* CGPathAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +476,7 @@
 				69B4CDDB1B5732D3005737F3 /* LandscapeVideo */,
 				F4BDB20B1B3841670033E65D /* Timer+GCD+Perfomer */,
 				69573DBF1B96D1A80085321D /* WebJS */,
+				698894041BEC9DA500D5D9B1 /* NetMonitor */,
 				F4BDB1E51B3840AD0033E65D /* AppDelegate.h */,
 				F4BDB1E61B3840AD0033E65D /* AppDelegate.m */,
 				696129041BB38A5B000AAB3B /* Watchdog.h */,
@@ -540,6 +558,7 @@
 				F4BDB1DB1B3840AD0033E65D /* Frameworks */,
 				F4BDB1DC1B3840AD0033E65D /* Resources */,
 				6AEEB17C33E6EB9DDC134B1D /* Copy Pods Resources */,
+				C7B84D40006F1EDFF0645FA7 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -667,6 +686,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C7B84D40006F1EDFF0645FA7 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -674,6 +708,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6988940A1BEC9E1500D5D9B1 /* NetMonitorViewController.m in Sources */,
 				69573DC21B96D1E00085321D /* WebJSController.m in Sources */,
 				F4BDB20E1B3841670033E65D /* TimerViewController.m in Sources */,
 				69BD94771B8FFE2700DA5F19 /* UILabel+Path.m in Sources */,
@@ -719,6 +754,7 @@
 				69BD947D1B8FFF9400DA5F19 /* UIView+Category.m in Sources */,
 				69BD947A1B8FFEB800DA5F19 /* UIBezierPath+TextPath.m in Sources */,
 				69573DDF1B9D7F580085321D /* Father.m in Sources */,
+				698894071BEC9DF000D5D9B1 /* WYURLProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
