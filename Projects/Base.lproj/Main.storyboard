@@ -461,7 +461,7 @@
         <!--Network monitor-->
         <scene sceneID="13t-I4-vbg">
             <objects>
-                <viewController storyboardIdentifier="NetMonitorViewController" id="Box-NS-b0N" customClass="NetMonitorViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NetMonitorViewController" automaticallyAdjustsScrollViewInsets="NO" id="Box-NS-b0N" customClass="NetMonitorViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tEh-QW-UmX"/>
                         <viewControllerLayoutGuide type="bottom" id="D0x-Dc-oT8"/>

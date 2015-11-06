@@ -53,6 +53,7 @@ NSURLConnectionDataDelegate
 }
 
 - (void)startLoading {
+    dLog(@"%@",self.request.URL);
     static NSOperationQueue *opq = nil;
     if (!opq) {
         opq = [NSOperationQueue new];
