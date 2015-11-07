@@ -11,6 +11,9 @@
 #import <objc/message.h>
 #import <Mantle.h>
 #import <FMDB.h>
+#import "Son.h"
+#import "Watchdog.h"
+
 @import AdSupport;
 
 @interface TstModel2 : MTLModel
@@ -65,8 +68,8 @@ MTLJSONSerializing
 
 @interface AppDelegate ()
 @property (nonatomic, copy) NSString *temp;
-
-
+@property (nonatomic, strong) NSMutableArray *mutableArray;
+@property (nonatomic, strong) Watchdog *dog;
 @end
 
 @implementation AppDelegate
@@ -108,7 +111,7 @@ MTLJSONSerializing
     //6B5FABAA-847F-4ADA-8FDD-37BA37D060E4
     //30067A99-AC80-45DC-83F6-323D6B3D2DD3
     
-    dLog(@"%@",[[[ASIdentifierManager alloc] advertisingIdentifier] UUIDString]);
+//    dLog(@"%@",[[[ASIdentifierManager alloc] advertisingIdentifier] UUIDString]);
 //    Class asi = NSClassFromString(@"ASIdentifierManager");
 //    Class a = objc_getClass("NSString");
 //    Class asi = objc_getClass("ASIdentifierManager");
@@ -136,7 +139,7 @@ MTLJSONSerializing
 //    mArrayCopy[0]=@"6";
 //    NSArray *arrayCopy = [mArray copy];
     
-    /*
+
     // 分解umeng数据
     NSString *path = [[NSBundle mainBundle] pathForResource:@"umeng" ofType:@"txt"];
     NSData * d = [NSData dataWithContentsOfFile:path];
@@ -147,10 +150,28 @@ MTLJSONSerializing
     NSString *du = @",";
     NSMutableString *rslt = [NSMutableString string];
     
-    for (NSString *src in a) {
+    for (NSString *srcs in a) {
+        NSString *src = [srcs copy];
+        // 清除 末尾 ','
+        if ([src hasSuffix:@","]) {
+            src = [src substringToIndex:src.length - 1];
+        }
+
+        // 清除 末尾 ',0'
+        if ([src hasSuffix:@",0"]) {
+            src = [src substringToIndex:src.length - 2];
+        }
+        
+        // 清除 末尾 ',1'
+        if ([src hasSuffix:@",1"]) {
+            src = [src substringToIndex:src.length - 2];
+        }
+        
         if (src.length < 2) {
             continue;
         }
+        
+        src = [src stringByReplacingOccurrencesOfString:@"," withString:@",//"];
         
         NSRange range = [src rangeOfString:du];
         if (range.location != NSNotFound) {
@@ -169,13 +190,11 @@ MTLJSONSerializing
             [rslt appendString:t2];
             [rslt appendString:@"   "];
             [rslt appendString:t3];
-            [rslt appendFormat:@"\r\n"];
+            [rslt appendFormat:@"\n"];
         }
     }
-    dLog(@"%@",rslt);
-    */
-    
-    
+//    dLog(@"%@",rslt);
+  
     
 //    NSDictionary *info = @{@"code":@1,@"rslt":@{@"token":@"78390j87djd7fk0",@"user_id":@"1233123"},@"msg":@"",@"tst2":@{@"age":@22,@"name":@"tangwei"}};
 //    
@@ -199,6 +218,20 @@ MTLJSONSerializing
     
     fLog();
     return YES;
+    
+//    NSString *old = [[[UIWebView alloc] init] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+//    NSString *newAgent =  [old stringByAppendingString:@"  MangoPlus"];
+//    
+//    NSDictionary *dictionnary = [[NSDictionary alloc] initWithObjectsAndKeys:newAgent, @"UserAgent", nil];
+//    [[NSUserDefaults standardUserDefaults] registerDefaults:dictionnary];
+//    [Son new];
+//    NSLog(@"%lu",sizeof(8));
+//    dLog(@"%f",FLT_MIN);
+    
+    
+    Watchdog *dog = [[Watchdog alloc] initWithThreshold:0.2];
+    self.dog = dog;
+    return NO;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

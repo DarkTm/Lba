@@ -3,5 +3,6 @@ pod 'pop'
 pod 'Shimmer'
 pod 'SDWebImage'
 pod 'MBProgressHUD'
-pod 'Mantle'
 pod 'FMDB'
+pod 'ReactiveCocoa’,’2.5’
+pod 'Mantle'

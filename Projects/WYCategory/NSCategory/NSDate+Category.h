@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDate (Category)
+//  date -> string assgin format
+- (NSString *) stringFromDateWithFormat:(NSString *)format;
 
-- (NSString*) formatterWithString:(NSString*)dateFormat;
-
+// date -> date add mins(60 * 60....)
 - (NSDate *) dateByAddingDays: (NSInteger) iTime;
+
 @end

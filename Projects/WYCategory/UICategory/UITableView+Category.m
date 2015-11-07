@@ -7,7 +7,7 @@
 //
 
 #import "UITableView+Category.h"
-#import "UIView+Corner.h"
+#import "UIView+Category.h"
 
 @implementation UITableView (Category)
 

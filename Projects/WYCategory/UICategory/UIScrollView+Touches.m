@@ -7,7 +7,7 @@
 //
 
 #import "UIScrollView+Touches.h"
-#import "UIView+Corner.h"
+#import "UIView+Category.h"
 
 @implementation UIScrollView (Category)
 

@@ -12,6 +12,8 @@
     NSTimer *timer;
 }
 
+@property (nonatomic, strong) UIView *vAnimation;
+
 @end
 
 @implementation TimerViewController
@@ -30,11 +32,28 @@
 //    dispatch_async_repeated(3, dispatch_get_main_queue(), ^(BOOL *stop) {
 //        dLog(@"");
 //    });
-    [[WYDelayGCD shareDelayGCD] startWithDelay:4 task:^{
-        fLog();
-    }];
+//    [[WYDelayGCD shareDelayGCD] startWithDelay:4 task:^{
+//        fLog();
+//    }];
     
+    CALayer *pL = [CALayer layer];
+    
+    
+    [[WYDelayTimer shareDelayTimer] startWithDelay:0 rpt:YES inteval:3 task:^{
+        CALayer *model = self.vAnimation.layer.modelLayer;
+        CALayer *layer = self.vAnimation.layer.presentationLayer;
+        
+        dLog(@"%@,%@,%@",model,layer,self.vAnimation.layer);
+        dLog(@"%@,%@,%@",pL.modelLayer,pL.presentationLayer,pL);
+    }];
     NSLog(@"2");
+    self.vAnimation = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    self.vAnimation.backgroundColor = [UIColor redColor];
+    [self.view addSubview:self.vAnimation];
+    [self.vAnimation.layer insertSublayer:pL below:self.vAnimation.layer];
+    [UIView animateWithDuration:4.0 animations:^{
+        self.vAnimation.frame = CGRectMake(200, 200, 50, 50);
+    }];
     
 }
 - (void)nslog {
