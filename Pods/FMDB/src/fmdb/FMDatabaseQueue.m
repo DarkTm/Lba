@@ -144,7 +144,7 @@ static const void * const kDispatchQueueSpecificKey = &kDispatchQueueSpecificKey
     
     FMDBRetain(self);
     
-    dispatch_async(_queue, ^() {
+    dispatch_sync(_queue, ^() {
         
         FMDatabase *db = [self database];
         block(db);
@@ -168,7 +168,7 @@ static const void * const kDispatchQueueSpecificKey = &kDispatchQueueSpecificKey
 
 - (void)beginTransaction:(BOOL)useDeferred withBlock:(void (^)(FMDatabase *db, BOOL *rollback))block {
     FMDBRetain(self);
-    dispatch_async(_queue, ^() { 
+    dispatch_sync(_queue, ^() { 
         
         BOOL shouldRollback = NO;
         
@@ -206,7 +206,7 @@ static const void * const kDispatchQueueSpecificKey = &kDispatchQueueSpecificKey
     static unsigned long savePointIdx = 0;
     __block NSError *err = 0x00;
     FMDBRetain(self);
-    dispatch_async(_queue, ^() { 
+    dispatch_sync(_queue, ^() { 
         
         NSString *name = [NSString stringWithFormat:@"savePoint%ld", savePointIdx++];
         

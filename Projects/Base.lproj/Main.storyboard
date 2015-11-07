@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A215h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ssF-7c-zeR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ssF-7c-zeR">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -132,7 +131,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MotionEffect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hov-xA-hrg">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MotionEffect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hov-xA-hrg">
                                                     <rect key="frame" x="94" y="11" width="99" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -184,7 +183,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CGPathAnimation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="za9-wQ-Xwa">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CGPathAnimation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="za9-wQ-Xwa">
                                                     <rect key="frame" x="75" y="11" width="136" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -203,6 +202,32 @@
                                             <segue destination="Wl8-qY-hbs" kind="push" id="HsB-3Q-BMN"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="t9j-hM-W4W">
+                                        <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t9j-hM-W4W" id="pwF-dK-0ai">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network monitor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MR7-yU-tge">
+                                                    <rect key="frame" x="79" y="11" width="128" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="MR7-yU-tge" secondAttribute="centerX" id="VWr-eY-I43"/>
+                                                <constraint firstAttribute="centerY" secondItem="MR7-yU-tge" secondAttribute="centerY" id="xQb-iY-hdN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <segue destination="Box-NS-b0N" kind="push" id="aqg-G8-bgN"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -215,7 +240,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Qm-PX-kHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="568" y="203"/>
+            <point key="canvasLocation" x="-128" y="191"/>
         </scene>
         <!--MotionEffect-->
         <scene sceneID="zzh-wA-yNz">
@@ -226,11 +251,11 @@
                         <viewControllerLayoutGuide type="bottom" id="zLe-cC-7Mw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hg4-Qd-CGI">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="motion.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8T9-Xv-rqh">
-                                <rect key="frame" x="-20" y="-20" width="360" height="544"/>
+                                <rect key="frame" x="-20" y="44" width="360" height="544"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
@@ -244,7 +269,6 @@
                             <constraint firstAttribute="trailing" secondItem="8T9-Xv-rqh" secondAttribute="trailing" constant="-20" id="r9t-m1-VVu"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="MotionEffect" id="noE-b9-1QA"/>
                     <connections>
                         <outlet property="ivImage" destination="8T9-Xv-rqh" id="2yK-Tq-NqO"/>
@@ -252,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQi-hp-K4q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="507" y="-234"/>
+            <point key="canvasLocation" x="294" y="191"/>
         </scene>
         <!--WebJS-->
         <scene sceneID="1k5-sV-c8F">
@@ -292,7 +316,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1b2-hp-K4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="858" y="-114"/>
+            <point key="canvasLocation" x="294" y="66"/>
         </scene>
         <!--Timer View Controller-->
         <scene sceneID="drJ-jx-i4L">
@@ -312,7 +336,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQt-eh-ZFF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942" y="203"/>
+            <point key="canvasLocation" x="294" y="-277"/>
         </scene>
         <!--Runtime-->
         <scene sceneID="7NU-y4-zJf">
@@ -401,7 +425,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mA0-Mz-3wa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134" y="570"/>
+            <point key="canvasLocation" x="294" y="316"/>
         </scene>
         <!--CGPath Animation-->
         <scene sceneID="UpH-lJ-o5Y">
@@ -431,7 +455,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IiX-zV-ggW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405" y="920"/>
+            <point key="canvasLocation" x="294" y="502"/>
+        </scene>
+        <!--Network monitor-->
+        <scene sceneID="13t-I4-vbg">
+            <objects>
+                <viewController storyboardIdentifier="NetMonitorViewController" automaticallyAdjustsScrollViewInsets="NO" id="Box-NS-b0N" customClass="NetMonitorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tEh-QW-UmX"/>
+                        <viewControllerLayoutGuide type="bottom" id="D0x-Dc-oT8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dGy-pV-025">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEa-NM-p1U">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hEa-NM-p1U" firstAttribute="leading" secondItem="dGy-pV-025" secondAttribute="leading" id="5Ix-4x-muS"/>
+                            <constraint firstItem="hEa-NM-p1U" firstAttribute="top" secondItem="tEh-QW-UmX" secondAttribute="bottom" id="KbK-Ma-3bX"/>
+                            <constraint firstItem="D0x-Dc-oT8" firstAttribute="top" secondItem="hEa-NM-p1U" secondAttribute="bottom" id="WHA-pz-ekG"/>
+                            <constraint firstAttribute="trailing" secondItem="hEa-NM-p1U" secondAttribute="trailing" id="wd2-U7-xBL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Network monitor" id="eCn-MQ-Apy"/>
+                    <connections>
+                        <outlet property="webView" destination="hEa-NM-p1U" id="oup-Br-DIa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E4e-k1-DBl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="294" y="648"/>
         </scene>
         <!--Notify Controller-->
         <scene sceneID="Zhp-KV-V7y">
@@ -451,7 +511,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWa-9B-96b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="568" y="812"/>
+            <point key="canvasLocation" x="294" y="-48"/>
         </scene>
         <!--竖屏应用，视频横播-->
         <scene sceneID="oVS-jd-QQ4">
@@ -499,7 +559,7 @@
                             </imageView>
                             <visualEffectView opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qjc-MP-1bL">
                                 <rect key="frame" x="60" y="229" width="240" height="128"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ec7-ka-iEZ">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="ec7-ka-iEZ">
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <animations/>
@@ -539,7 +599,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BlU-CV-UiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957" y="812"/>
+            <point key="canvasLocation" x="294" y="-170"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ve1-ql-qjp">
@@ -558,16 +618,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVc-fL-Lf8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134.93333333333334" y="203.53333333333333"/>
+            <point key="canvasLocation" x="-464" y="191"/>
         </scene>
     </scenes>
     <resources>
         <image name="change.png" width="32" height="22"/>
         <image name="motion.jpg" width="718" height="1158"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

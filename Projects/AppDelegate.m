@@ -203,13 +203,13 @@ MTLJSONSerializing
     FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:@"/tmp/tmp.db"];
     
     [queue inDatabase:^(FMDatabase *db) {
-        sleep(10);
+//        sleep(10);
         dLog(@"%@",[NSThread currentThread]);
         dLog(@"%d",[NSThread isMainThread]);
     }];
 
     [queue inDatabase:^(FMDatabase *db) {
-        sleep(5);
+//        sleep(5);
         dLog(@"%@",[NSThread currentThread]);
         dLog(@"%d",[NSThread isMainThread]);
     }];
