@@ -55,6 +55,7 @@
 		6989F7511BA7B73E001374C0 /* PathAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6989F74E1BA7B73E001374C0 /* PathAnimationView.m */; };
 		69A18F871BA2AD7E00C430D8 /* RuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A18F861BA2AD7E00C430D8 /* RuntimeController.m */; };
 		69A18F8A1BA2D7EB00C430D8 /* UIButton+TouchUpInside.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A18F891BA2D7EB00C430D8 /* UIButton+TouchUpInside.m */; };
+		69ABA8391C619CFF0082AE4A /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ABA8381C619CFF0082AE4A /* GCDViewController.m */; };
 		69B4CDDE1B57338F005737F3 /* LandscapeVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B4CDDD1B57338F005737F3 /* LandscapeVideoController.m */; };
 		69B4CDE11B573409005737F3 /* LandscapeVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B4CDE01B573409005737F3 /* LandscapeVideoView.m */; };
 		69B4CDE51B57A08F005737F3 /* change@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69B4CDE41B57A08F005737F3 /* change@3x.png */; };
@@ -65,7 +66,6 @@
 		69BD947D1B8FFF9400DA5F19 /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BD947C1B8FFF9400DA5F19 /* UIView+Category.m */; };
 		69E1F4BB1BB2654A00805300 /* SuggestedColors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69E1F4BA1BB2654A00805300 /* SuggestedColors.plist */; };
 		F43F50FC1B3857EA00F64CA6 /* TODO.md in Resources */ = {isa = PBXBuildFile; fileRef = F43F50FB1B3857EA00F64CA6 /* TODO.md */; };
-		F47741BC1B9AC8E50035EF46 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F47741BB1B9AC8E50035EF46 /* libsqlite3.dylib */; };
 		F4BDB1E41B3840AD0033E65D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB1E31B3840AD0033E65D /* main.m */; };
 		F4BDB1E71B3840AD0033E65D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB1E61B3840AD0033E65D /* AppDelegate.m */; };
 		F4BDB1EA1B3840AD0033E65D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB1E91B3840AD0033E65D /* ViewController.m */; };
@@ -177,6 +177,8 @@
 		69A18F861BA2AD7E00C430D8 /* RuntimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RuntimeController.m; path = Runtime/RuntimeController.m; sourceTree = "<group>"; };
 		69A18F881BA2D7EB00C430D8 /* UIButton+TouchUpInside.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+TouchUpInside.h"; path = "Runtime/UIButton+TouchUpInside.h"; sourceTree = "<group>"; };
 		69A18F891BA2D7EB00C430D8 /* UIButton+TouchUpInside.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+TouchUpInside.m"; path = "Runtime/UIButton+TouchUpInside.m"; sourceTree = "<group>"; };
+		69ABA8371C619CFF0082AE4A /* GCDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
+		69ABA8381C619CFF0082AE4A /* GCDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
 		69B4CDDC1B57338F005737F3 /* LandscapeVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LandscapeVideoController.h; path = LandscapeVideo/LandscapeVideoController.h; sourceTree = "<group>"; };
 		69B4CDDD1B57338F005737F3 /* LandscapeVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LandscapeVideoController.m; path = LandscapeVideo/LandscapeVideoController.m; sourceTree = "<group>"; };
 		69B4CDDF1B573409005737F3 /* LandscapeVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LandscapeVideoView.h; path = LandscapeVideo/LandscapeVideoView.h; sourceTree = "<group>"; };
@@ -195,7 +197,6 @@
 		9BDB0B1E051F2FAC33DB0DAE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DAF74B3E260E9E40264DC2EB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43F50FB1B3857EA00F64CA6 /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
-		F47741BB1B9AC8E50035EF46 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F4BDB1DE1B3840AD0033E65D /* Projects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BDB1E21B3840AD0033E65D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4BDB1E31B3840AD0033E65D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -218,7 +219,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				691D9EEE1B81C8AE00559F04 /* libsqlite3.0.tbd in Frameworks */,
 				698612361BAFDE0A00DFD18E /* libsqlite3.dylib in Frameworks */,
 				69573DD01B96E47A0085321D /* WebKit.framework in Frameworks */,
 				69573DC81B96D50C0085321D /* JavaScriptCore.framework in Frameworks */,
@@ -418,6 +418,15 @@
 			name = CGPathAnimation;
 			sourceTree = "<group>";
 		};
+		69ABA8361C619CCF0082AE4A /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				69ABA8371C619CFF0082AE4A /* GCDViewController.h */,
+				69ABA8381C619CFF0082AE4A /* GCDViewController.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
 		69B4CDDB1B5732D3005737F3 /* LandscapeVideo */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,10 +489,11 @@
 				F4BDB20B1B3841670033E65D /* Timer+GCD+Perfomer */,
 				69573DBF1B96D1A80085321D /* WebJS */,
 				698894041BEC9DA500D5D9B1 /* NetMonitor */,
-				F4BDB1E51B3840AD0033E65D /* AppDelegate.h */,
-				F4BDB1E61B3840AD0033E65D /* AppDelegate.m */,
+				69ABA8361C619CCF0082AE4A /* GCD */,
 				696129041BB38A5B000AAB3B /* Watchdog.h */,
 				696129051BB38A5B000AAB3B /* Watchdog.m */,
+				F4BDB1E51B3840AD0033E65D /* AppDelegate.h */,
+				F4BDB1E61B3840AD0033E65D /* AppDelegate.m */,
 				6931F0721BA945FC00D5A1FF /* umeng.txt */,
 				697768171B397BC700F6FDB9 /* AppMacro.pch */,
 				F4BDB1E81B3840AD0033E65D /* ViewController.h */,
@@ -541,7 +551,6 @@
 		FAF45AC0DE5F6DAE108261A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				691D9EED1B81C8AE00559F04 /* libsqlite3.0.tbd */,
 				698612351BAFDE0A00DFD18E /* libsqlite3.dylib */,
 				69573DCF1B96E47A0085321D /* WebKit.framework */,
 				69573DC71B96D50C0085321D /* JavaScriptCore.framework */,
@@ -755,6 +764,7 @@
 				691367EF1B819EA60081C9D8 /* UIImage+Category.m in Sources */,
 				69573DDC1B9D7F090085321D /* Son.m in Sources */,
 				6950A5411BAFAFAF002F1A0B /* UIButtonTarget.m in Sources */,
+				69ABA8391C619CFF0082AE4A /* GCDViewController.m in Sources */,
 				69BD947D1B8FFF9400DA5F19 /* UIView+Category.m in Sources */,
 				69BD947A1B8FFEB800DA5F19 /* UIBezierPath+TextPath.m in Sources */,
 				69573DDF1B9D7F580085321D /* Father.m in Sources */,
@@ -891,13 +901,16 @@
 			baseConfigurationReference = 9BDB0B1E051F2FAC33DB0DAE /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Projects/AppMacro.pch;
 				INFOPLIST_FILE = Projects/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -906,13 +919,16 @@
 			baseConfigurationReference = 369D57773075BC175B031689 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Projects/AppMacro.pch;
 				INFOPLIST_FILE = Projects/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

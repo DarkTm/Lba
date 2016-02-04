@@ -203,7 +203,7 @@ MTLJSONSerializing
     FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:@"/tmp/tmp.db"];
     
     [queue inDatabase:^(FMDatabase *db) {
-//        sleep(10);
+        sleep(3);
         dLog(@"%@",[NSThread currentThread]);
         dLog(@"%d",[NSThread isMainThread]);
     }];
@@ -216,7 +216,7 @@ MTLJSONSerializing
     
 
     
-    fLog();
+
     return YES;
     
 //    NSString *old = [[[UIWebView alloc] init] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
@@ -229,8 +229,8 @@ MTLJSONSerializing
 //    dLog(@"%f",FLT_MIN);
     
     
-    Watchdog *dog = [[Watchdog alloc] initWithThreshold:0.2];
-    self.dog = dog;
+//    Watchdog *dog = [[Watchdog alloc] initWithThreshold:0.2];
+//    self.dog = dog;
     return NO;
 }
 
