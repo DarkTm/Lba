@@ -13,6 +13,7 @@
 #import <FMDB.h>
 #import "Son.h"
 #import "Watchdog.h"
+#import <FBShimmeringView.h>
 
 @import AdSupport;
 
@@ -139,7 +140,7 @@ MTLJSONSerializing
 //    mArrayCopy[0]=@"6";
 //    NSArray *arrayCopy = [mArray copy];
     
-
+/*
     // 分解umeng数据
     NSString *path = [[NSBundle mainBundle] pathForResource:@"umeng" ofType:@"txt"];
     NSData * d = [NSData dataWithContentsOfFile:path];
@@ -214,10 +215,10 @@ MTLJSONSerializing
         dLog(@"%d",[NSThread isMainThread]);
     }];
     
-
+*/
     
 
-    return YES;
+//    return YES;
     
 //    NSString *old = [[[UIWebView alloc] init] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
 //    NSString *newAgent =  [old stringByAppendingString:@"  MangoPlus"];
@@ -231,7 +232,8 @@ MTLJSONSerializing
     
 //    Watchdog *dog = [[Watchdog alloc] initWithThreshold:0.2];
 //    self.dog = dog;
-    return NO;
+        
+    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

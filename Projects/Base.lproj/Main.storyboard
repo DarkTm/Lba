@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ssF-7c-zeR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ssF-7c-zeR">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -227,6 +227,29 @@
                                             <segue destination="bYq-eP-dky" kind="push" id="pNc-wn-tg8"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="rHY-aE-H5Z">
+                                        <rect key="frame" x="0.0" y="460" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rHY-aE-H5Z" id="eDp-Bc-nax">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Magic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNY-qj-oNG">
+                                                    <rect key="frame" x="120" y="11" width="47" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="oNY-qj-oNG" secondAttribute="centerX" id="CpH-VU-ufh"/>
+                                                <constraint firstAttribute="centerY" secondItem="oNY-qj-oNG" secondAttribute="centerY" id="j0C-mf-PFy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="4j1-YX-p5j" kind="push" id="6Xb-kQ-jH9"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -440,6 +463,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IiX-zV-ggW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="294" y="502"/>
+        </scene>
+        <!--Magic-->
+        <scene sceneID="F1B-H1-xkM">
+            <objects>
+                <viewController storyboardIdentifier="MagicViewController" id="4j1-YX-p5j" customClass="MagicViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kfi-lf-wcU"/>
+                        <viewControllerLayoutGuide type="bottom" id="o1p-wC-3ze"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0lb-WQ-Uti">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ihe-Oe-lY5">
+                                <rect key="frame" x="21" y="89" width="44" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="WzQ-iE-VwQ"/>
+                                    <constraint firstAttribute="width" constant="44" id="ifX-Y9-6N9"/>
+                                </constraints>
+                                <state key="normal" title="Sound"/>
+                                <connections>
+                                    <action selector="actionSound:" destination="4j1-YX-p5j" eventType="touchUpInside" id="l9a-dR-D5z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ihe-Oe-lY5" firstAttribute="leading" secondItem="0lb-WQ-Uti" secondAttribute="leading" constant="21" id="4d8-6z-PMj"/>
+                            <constraint firstItem="Ihe-Oe-lY5" firstAttribute="top" secondItem="kfi-lf-wcU" secondAttribute="bottom" constant="25" id="iaa-3d-1e3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Magic" id="x0n-6e-Igp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UWw-nu-dRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-116" y="767"/>
         </scene>
         <!--GCD-->
         <scene sceneID="3TV-23-LKp">

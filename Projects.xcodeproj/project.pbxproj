@@ -31,6 +31,7 @@
 		69204AFD1BB15B2E00CB4A85 /* item1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69204AFC1BB15B2E00CB4A85 /* item1.storyboard */; };
 		69204AFF1BB15B3500CB4A85 /* item2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69204AFE1BB15B3500CB4A85 /* item2.storyboard */; };
 		6931F0731BA945FC00D5A1FF /* umeng.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6931F0721BA945FC00D5A1FF /* umeng.txt */; };
+		693BC06B1D4EE38400C81C68 /* MagicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 693BC06A1D4EE38300C81C68 /* MagicViewController.m */; };
 		694E411F1BB158F10022D3E2 /* MStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 694E411E1BB158F10022D3E2 /* MStory.storyboard */; };
 		69507F7F1BA114A0006E3D60 /* Number.m in Sources */ = {isa = PBXBuildFile; fileRef = 69507F7E1BA114A0006E3D60 /* Number.m */; };
 		6950A5411BAFAFAF002F1A0B /* UIButtonTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6950A53E1BAFAFAF002F1A0B /* UIButtonTarget.m */; };
@@ -135,6 +136,8 @@
 		69204AFC1BB15B2E00CB4A85 /* item1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = item1.storyboard; sourceTree = "<group>"; };
 		69204AFE1BB15B3500CB4A85 /* item2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = item2.storyboard; sourceTree = "<group>"; };
 		6931F0721BA945FC00D5A1FF /* umeng.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = umeng.txt; sourceTree = "<group>"; };
+		693BC0691D4EE38300C81C68 /* MagicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicViewController.h; sourceTree = "<group>"; };
+		693BC06A1D4EE38300C81C68 /* MagicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicViewController.m; sourceTree = "<group>"; };
 		694E411E1BB158F10022D3E2 /* MStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MStory.storyboard; sourceTree = "<group>"; };
 		69507F7D1BA114A0006E3D60 /* Number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Number.h; path = Runtime/Number.h; sourceTree = "<group>"; };
 		69507F7E1BA114A0006E3D60 /* Number.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Number.m; path = Runtime/Number.m; sourceTree = "<group>"; };
@@ -340,6 +343,15 @@
 			path = UISubView;
 			sourceTree = "<group>";
 		};
+		693BC0681D4EE32A00C81C68 /* Magic */ = {
+			isa = PBXGroup;
+			children = (
+				693BC0691D4EE38300C81C68 /* MagicViewController.h */,
+				693BC06A1D4EE38300C81C68 /* MagicViewController.m */,
+			);
+			path = Magic;
+			sourceTree = "<group>";
+		};
 		6950A5431BAFAFB7002F1A0B /* Umeng Event */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,6 +491,7 @@
 		F4BDB1E01B3840AD0033E65D /* Projects */ = {
 			isa = PBXGroup;
 			children = (
+				693BC0681D4EE32A00C81C68 /* Magic */,
 				69B5758D1BB0FC8100A6584D /* Watchdog */,
 				6989F7461BA7AAF8001374C0 /* CGPathAnimation */,
 				69573DD91B9D7EE70085321D /* Runtime */,
@@ -606,11 +619,12 @@
 		F4BDB1D61B3840AD0033E65D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = ikefou.com;
 				TargetAttributes = {
 					F4BDB1DD1B3840AD0033E65D = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = F53QKE564Q;
 					};
 					F4BDB1F61B3840AD0033E65D = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -755,6 +769,7 @@
 				69A18F871BA2AD7E00C430D8 /* RuntimeController.m in Sources */,
 				6989F7491BA7AB17001374C0 /* PathAnimationController.m in Sources */,
 				691367E71B819EA60081C9D8 /* NSDictionary+Category.m in Sources */,
+				693BC06B1D4EE38400C81C68 /* MagicViewController.m in Sources */,
 				695628481BA65D6200054DFB /* UIView+EventID.m in Sources */,
 				69A18F8A1BA2D7EB00C430D8 /* UIButton+TouchUpInside.m in Sources */,
 				69573DD41B9BD35F0085321D /* MotionEffectViewController.m in Sources */,
@@ -831,6 +846,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
@@ -909,6 +925,7 @@
 				INFOPLIST_FILE = Projects/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ikefou.com.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -927,6 +944,7 @@
 				INFOPLIST_FILE = Projects/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ikefou.com.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -949,6 +967,7 @@
 				);
 				INFOPLIST_FILE = ProjectsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ikefou.com.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Projects.app/Projects";
 			};
@@ -966,6 +985,7 @@
 				GCC_PREFIX_HEADER = Projects/AppMacro.pch;
 				INFOPLIST_FILE = ProjectsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ikefou.com.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Projects.app/Projects";
 			};
